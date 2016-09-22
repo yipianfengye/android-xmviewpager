@@ -131,6 +131,8 @@ class MActivity : AppCompatActivity() {
                             mViewPager!!.setCurrentItem(tab.position + 1, false)
                             mViewPager!!.setCurrentItem(tab.position, true)
                         }
+                    } else {
+                        mViewPager!!.setCurrentItem(tab.position, true)
                     }
 
                     isOk = true
