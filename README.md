@@ -6,7 +6,7 @@
 
 在介绍具体的使用说明之前，我们先看一下简单的实现效果：
 <br>
-![image](http://img.blog.csdn.net/20160922095746542)
+![image](https://github.com/yipianfengye/android-xmviewpager/blob/master/images/20160922095746542.gif)
 
 
 **实现说明**
