@@ -158,6 +158,49 @@
     }
 ```
 
+然后我们可以看一下数据初始化是如何实现的：
+
+```
+/**
+ * Created by aaron on 16/9/14.
+ * 主要用于保存界面ViewPager数据
+ */
+class ViewData {
+
+    /**
+     * 该方法用于获取ViewPager TAB 显示数据
+     */
+    fun getTitles() : ArrayList<String> {
+        /**
+         * 通过类名创建该类的对象,这里直接调用java中的集合框架
+         */
+        val titles = ArrayList<String>()
+
+        titles.clear()
+        titles.add("推荐")
+        titles.add("视频")
+        titles.add("热点")
+        titles.add("娱乐")
+        titles.add("体育")
+        titles.add("北京")
+        titles.add("财经")
+        titles.add("科技")
+        titles.add("汽车")
+        titles.add("社会")
+        titles.add("搞笑")
+        titles.add("军事")
+        titles.add("历史")
+        titles.add("涨知识")
+        titles.add("NBA")
+        titles.add("两性")
+
+        return titles
+    }
+
+}
+```
+
+
 这其中需要注意的是：viewPager的setCurrentItem方法，表示会将viewPager的当前显示Item设置为指定的item，而我们可以发现这里的setCurrentItem有两个参数，第一个参数，是显示当前Item的position，而第二个参数为boolean类型，表示是否有滑动效果，比如当前我们在ViewPager的第一项，而我们点击了TabLayout的第八项，这时候如果我们调用了：setCurrentItem(8, true),它表示我们将滑动到ViewPager的第八项，且有滚动效果。这样我们做一下变通，当我们点击的TabLayout与当前Item的距离大于一个Item的时候就先滑动到当前Item的前一个并且没有滑动效果，然后在执行一次setCurrentItem方法，这样在跨多个Tab点击的时候就屏蔽了多个Item滚动的效果了。
 
 
